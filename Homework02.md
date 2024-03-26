@@ -19,7 +19,7 @@ name – строковый тип;
 
 Используя CRUD-операцию INSERT, наполните сущность manufacturer в соответствии с данными, имеющимися в атрибуте manufacturer сущности mobile_phones.
 
-```
+```sql
 DROP TABLE IF EXISTS itresume9807467.manufacturer;
 CREATE TABLE itresume9807467.manufacturer (
 	id SERIAL PRIMARY KEY, -- SERIAL = BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE
@@ -42,7 +42,7 @@ SELECT * FROM itresume9807467.manufacturer;
 
 Необходимо вывести название, производителя и статус количества для мобильных телефонов.
 
-```
+```sql
 SELECT 
   product_name,
   manufacturer,
@@ -60,7 +60,7 @@ FROM mobile_phones
 Удалите атрибут manufacturer из сущности mobile_phones.
 
 Выведите идентификатор, название и идентификатор производителя сущности mobile_phones.
-```
+```sql
 -- Добавление внешнего ключа в таблицу mobile_phones
 ALTER TABLE mobile_phones
 ADD COLUMN manufacturer_id BIGINT,
@@ -101,7 +101,7 @@ CANCELLED - «Order is cancelled»
 
 Необходимо вывести идентификатор и подробное описание статуса заказа.
 
-```
+```sql
 SELECT id,      
   CASE order_status
           WHEN 'OPEN' THEN 'Order is in open state'

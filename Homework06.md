@@ -2,7 +2,7 @@
 ## Урок 6. SQL – Транзакции. Временные таблицы, управляющие конструкции, циклы
 
 1. Создайте функцию, которая принимает кол-во сек и формат их в кол-во дней часов. Пример: 123456 ->'1 days 10 hours 17 minutes 36 seconds '
-
+```sql
 DROP FUNCTION IF EXISTS sec_to_days;
 
 DELIMITER //
@@ -24,9 +24,11 @@ CREATE FUNCTION sec_to_days(sec_inc INT)
     END //
 DELIMITER ;
 SELECT sec_to_days(123456); 
+```
 
 2. Выведите только четные числа от 1 до 10. Пример: 2,4,6,8,10 
 
+```sql
 DROP FUNCTION IF EXISTS print_num;
 DELIMITER //
 CREATE FUNCTION print_num(num INT)
@@ -44,3 +46,4 @@ RETURN result;
 END //
 DELIMITER ;
 SELECT print_num(10); 
+```

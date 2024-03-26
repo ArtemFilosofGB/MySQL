@@ -11,7 +11,7 @@ product_count – количество;
 price – цена.
 Необходимо вывести идентификатор, название, производителя, количество и цену для мобильных телефонов, у которых производитель «Samsung».
 
-```
+```sql
 SELECT * FROM mobile_phones WHERE manufacturer = "Samsung"
 ```
 
@@ -24,7 +24,7 @@ product_count – количество;
 price – цена.
 Необходимо вывести название, производителя и цену для мобильных телефонов, у которых количество больше чем 2.
 
-```
+```sql
 SELECT product_name, manufacturer, price
 FROM mobile_phones 
 WHERE product_count>2
@@ -48,7 +48,7 @@ P20 Pro	Huawei	341	36000
 
 Решение:
 
-```
+```sql
 CREATE TABLE itresume9807467.mobile_phones 
 (id SERIAL PRIMARY KEY, 
  product_name CHARACTER VARYING(30),

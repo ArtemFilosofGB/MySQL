@@ -6,7 +6,7 @@
 
 Вывести полученный ранг, имя, фамилия, пользователя и кол-во отправленных сообщений. Выводимый список необходимо отсортировать в порядке возрастания ранга.
 
-```
+```sql
 
 SELECT  DENSE_RANK() OVER (ORDER BY COUNT(m.id) DESC) AS rank_message,
 u.firstname,
@@ -44,6 +44,6 @@ created_at - дата отправки.
 
 Выведите идентификатор сообщения, дату отправки, дату отправки следующего сообщения и разницу даты отправки соседних сообщений.
 
-```
+```sql
 SELECT id, created_at, LEAD(created_at) OVER(ORDER BY created_at) AS lead_time, TIMESTAMPDIFF (MINUTE, created_at, LEAD(created_at) OVER(ORDER BY created_at)) AS minute_lead_diff FROM messages;
 ```
