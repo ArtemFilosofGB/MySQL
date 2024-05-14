@@ -26,6 +26,9 @@ DELIMITER ;
 SELECT sec_to_days(123456); 
 ```
 
+![](/pic/hw06_1.png)
+
+
 2. Выведите только четные числа от 1 до 10. Пример: 2,4,6,8,10 
 
 ```sql
@@ -47,3 +50,31 @@ END //
 DELIMITER ;
 SELECT print_num(10); 
 ```
+
+*Решение через процедуру*
+```
+DROP PROCEDURE IF EXISTS print_num;
+DELIMITER //
+CREATE PROCEDURE print_num(IN num INT)
+BEGIN
+  DECLARE counter INT DEFAULT 0;
+  DECLARE result VARCHAR(50) DEFAULT "";
+
+  WHILE counter < num DO
+    SET counter = counter + 2;
+    SET result = CONCAT(result, " ", counter);
+  END WHILE;
+
+  SELECT result;
+END //
+DELIMITER ;
+```
+Вызов:
+
+```
+CALL print_num(10);
+
+```
+
+![](/pic/hw06_2.png)
+
